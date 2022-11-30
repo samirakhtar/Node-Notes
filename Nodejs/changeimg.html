@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+   	div img{
+   	    width: 250px;
+   	    height: 250px;
+   	    padding: 5px;
+   	    border: 2px solid red;
+   	    margin-top: 15px;
+   	}
+   </style>
+</head>
+<body>
+	<h2>Change image on button click:</h2>
+	<button onclick='changeImage()'>Change Image</button>
+	<div>
+	    <img src='images/berry.jpg' id='myImg'>
+	</div>
+	<p><b>Note: </b>The images might take some time while loading the first time.</p>
+	
+	
+	<script>
+        const img = document.getElementById('myImg');
+        let currentImgIdx = 1;
+        const images = [ 
+            'images/berry.jpg',
+            'images/cat.jpg',
+            'images/bridge.jpg',
+            'images/coffee.jpg',
+            'images/leaves.jpg',
+            'images/lock.jpg'
+        ]; 
+        
+        // Call changeImage() function on button click
+        function changeImage(){
+            if(currentImgIdx >= images.length){
+                currentImgIdx = 0;
+                // If current idx exceeds images array
+                // length, reset it to 0 again
+            }
+            img.src = images[currentImgIdx];
+            currentImgIdx++;
+            // Increment current image idx by 1
+        }
+	</script>
+</body>
+</html>
